@@ -9,6 +9,8 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@latest/dist/web/pretendard.css');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
 
+
+
 html,
 body,
 div,
@@ -215,6 +217,7 @@ body {
 }
 
 * {
+  box-sizing: border-box;
   ::-webkit-scrollbar {
     display: none;
     -ms-overflow-style: none; /* 인터넷 익스플로러 */

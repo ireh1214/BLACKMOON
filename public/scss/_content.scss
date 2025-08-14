@@ -1,7 +1,6 @@
 
 
 
-
 body{
     background-color: #eee;
 }
@@ -47,14 +46,7 @@ height:100%;
     align-items: center;
     justify-content: center;
 
-    h2{
-        position: absolute;
-        top: 20vh;
-        font-size: 14px;
-      // text-transform: uppercase;
-       font-family: "Nanum Myeongjo", serif;
-       letter-spacing: 0.5px;
-    }
+
 }
 
 .main_img{
@@ -62,12 +54,28 @@ height:100%;
     max-width: 300px;
     height: auto;
     aspect-ratio:  300 / 555;
-    margin-bottom: 5vh;
 
     img{
         width: 100%;
         height: auto;
+
+               &:hover{
+               opacity: 0.7;
+               }
     }
+}
+
+.main_fadein {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInDown 1.2s ease-out forwards;
+}
+
+@keyframes fadeInDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 
@@ -93,7 +101,68 @@ main{
     }
 
     }
+}
 
+h2.animated_title {
+  font-size: 13px;
+  display: flex;
+      gap: 2px;
+        position: absolute;
+        top: 17vh;
+        font-size: 15px;
+  animation: expandGap 1.5s ease forwards;
+  animation-delay: 2.5s; // 전체 애니메이션 끝난 뒤 실행
+}
 
+.word {
+  opacity: 0;
+  animation: fadeIn 0.6s ease forwards;
+}
 
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* 각각 색 다르게 */
+.word.tiger {
+  animation: fadeInTiger 0.6s ease forwards;
+  text-transform: uppercase;
+}
+
+.word.moonlight {
+  animation: fadeInMoonlight 0.6s ease forwards;
+    text-transform: uppercase;
+}
+
+@keyframes fadeInTiger {
+  0% {
+    opacity: 0;
+    color: inherit;
+  }
+  100% {
+    opacity: 1;
+    color: #18226a; 
+  }
+}
+
+@keyframes fadeInMoonlight {
+  0% {
+    opacity: 0;
+    color: inherit;
+  }
+  100% {
+    opacity: 1;
+    color: #ffe20b; 
+  }
+}
+
+@keyframes expandGap {
+  from {
+    gap: 2px;
+  }
+  to {
+    gap: 6px;
+  }
 }
