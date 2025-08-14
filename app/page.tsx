@@ -49,8 +49,7 @@ export default function Home() {
       </div>
 
       <p className="blink_text">
-        @copyright 2025, version 0.01 | 2025년 8월 3일로부터{" "}
-        <span>{daysPassed}일</span>
+        ©2025, version 0.01 | 2025년 8월 3일로부터 <span>{daysPassed}일</span>
       </p>
     </div>
   );
