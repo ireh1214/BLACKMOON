@@ -43,7 +43,7 @@ export default function Home() {
           src="/img/main.png"
           alt="메인 이미지"
           style={{ cursor: "pointer" }}
-          onClick={() => router.push("/home")}
+          onClick={() => router.push("/HW/p1")}
           className="main_fadein"
         />
       </div>
