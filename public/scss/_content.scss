@@ -1,5 +1,5 @@
 body {
-  background-color: #eee;
+  background-color: #f9f9f9;
 }
 
 .wrap {
@@ -7,7 +7,7 @@ body {
   max-width: 768px;
   margin: 0 auto;
   background-color: #fff;
-  height: 100vh;
+  height: 100dvh;
 }
 
 header {
@@ -193,5 +193,45 @@ h2.animated_title {
   }
   70% {
     opacity: 1;
+  }
+}
+
+// 루제
+
+.trpg {
+  &.p1 {
+    padding: 16px;
+
+    .titleImg {
+      width: 90dvw;
+      max-width: 500px;
+      height: auto;
+      aspect-ratio: 1265 / 618;
+      background-image: url("../img/7.png");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 0 auto 20px;
+    }
+
+    .msg {
+      display: flex;
+      align-items: flex-start;
+      font-size: 14px;
+      margin-bottom: 5px;
+      line-height: 1.15;
+
+      .name {
+        background-color: #fff;
+        padding: 0px 8px;
+        white-space: nowrap;
+        &.ru {
+          color: #555;
+        }
+        &.jane {
+          color: #b79dc5;
+        }
+      }
+    }
   }
 }
