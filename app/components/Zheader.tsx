@@ -5,13 +5,13 @@ export default function Header() {
     <header>
       <ul>
         <li>
-          <Link href="HW/p1">P1</Link>
+          <Link href="/HW/p1">P1</Link>
         </li>
         <li>
-          <Link href="HW/p2">P2</Link>
+          <Link href="/HW/p2">P2</Link>
         </li>
         <li>
-          <Link href="HW/p3">P3</Link>
+          <Link href="/HW/p3">P3</Link>
         </li>
         {/* <li>
           <Link href="/p4">P4</Link>
