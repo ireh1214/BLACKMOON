@@ -13,9 +13,9 @@ export default function Header() {
         <li>
           <Link href="/RJ/p3">P3</Link>
         </li>
-        {/* <li>
-          <Link href="/p4">P4</Link>
-        </li> */}
+        <li>
+          <Link href="/RJ/p4">P4</Link>
+        </li>
       </ul>
     </header>
   );

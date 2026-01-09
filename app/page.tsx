@@ -7,15 +7,19 @@ const words = ["a", "tiger", "who", "ate", "the", "moonlight"];
 
 export default function Home() {
   const router = useRouter();
-  const [daysPassed, setDaysPassed] = useState(0);
+  const [daysFromAug3, setDaysFromAug3] = useState(0);
+  const [daysFromSep9, setDaysFromSep9] = useState(0);
 
-  // 날짜 계산
-  useEffect(() => {
-    const startDate = new Date(2025, 7, 3); // 8월 3일
+  const calcDaysFrom = (year: number, month: number, day: number) => {
+    const startDate = new Date(year, month - 1, day); // month는 0부터
     const today = new Date();
     const diffTime = today.getTime() - startDate.getTime();
-    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-    setDaysPassed(diffDays + 1); // +1일
+    return Math.floor(diffTime / (1000 * 60 * 60 * 24)) + 1; // 포함 계산
+  };
+
+  useEffect(() => {
+    setDaysFromAug3(calcDaysFrom(2025, 8, 3));
+    setDaysFromSep9(calcDaysFrom(2025, 9, 9));
   }, []);
 
   return (
@@ -39,17 +43,19 @@ export default function Home() {
       </h2>
 
       <div className="main_img">
-        <img
-          src="/img/main.png"
-          alt="메인 이미지"
-          style={{ cursor: "pointer" }}
-          onClick={() => router.push("/HW/p1")}
-          className="main_fadein"
-        />
+        <img src="/img/main.png" alt="메인 이미지" className="main_fadein" />
       </div>
 
+      <ul className="dday">
+        <li onClick={() => router.push("/HW/p1")}>
+          2025년 8월 3일로부터 <span>{daysFromAug3}일</span>
+        </li>
+        <li onClick={() => router.push("/RJ/p1")}>
+          2025년 9월 9일로부터 <span>{daysFromSep9}일</span>
+        </li>
+      </ul>
       <p className="blink_text">
-        ©2025, version 0.01 | 2025년 8월 3일로부터 <span>{daysPassed}일</span>
+        <p> ©2025, version 0.01</p>
       </p>
     </div>
   );

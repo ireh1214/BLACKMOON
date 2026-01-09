@@ -39,6 +39,7 @@ header ul {
   background-color: #fff;
   z-index: 10;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -105,9 +106,8 @@ main {
 h2.animated_title {
   display: flex;
   gap: 3px;
-  position: absolute;
+  margin-bottom: 3vh;
   letter-spacing: -0.8px;
-  top: 17vh;
   font-size: 15px;
   animation: expandGap 1.5s ease forwards;
   animation-delay: 2.8s; // 전체 애니메이션 끝난 뒤 실행\
@@ -173,14 +173,22 @@ h2.animated_title {
 }
 
 .blink_text {
-  position: absolute;
-  bottom: 10vh;
   animation: fadeBlink 2s infinite;
   animation-delay: 3.5s; /* 3.5초 후 시작 */
   opacity: 0;
   font-size: 12.5px;
   letter-spacing: -0.2px;
   color: #aaa;
+}
+
+.dday {
+  margin: 3vh 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  li {
+    cursor: pointer;
+  }
 }
 
 @keyframes fadeBlink {
@@ -209,6 +217,46 @@ h2.animated_title {
       height: auto;
       aspect-ratio: 1265 / 618;
       background-image: url("../img/7.png");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 0 auto 20px;
+    }
+
+    .msg {
+      display: flex;
+      align-items: flex-start;
+      font-size: 13.7px;
+      margin-bottom: 6px;
+      line-height: 1.25;
+      color: #444;
+
+      .name {
+        font-weight: 700;
+        font-size: 13px;
+        padding: 0px 8px;
+        white-space: nowrap;
+
+        &.ru {
+          color: #555;
+          padding-right: 8px;
+        }
+        &.jane {
+          color: #b79dc5;
+          padding-right: 20px;
+        }
+      }
+    }
+  }
+
+  &.p4 {
+    padding: 16px;
+
+    .titleImg {
+      max-width: 500px;
+      height: auto;
+      aspect-ratio: 1265 / 618;
+      background-image: url("../img/8.png");
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
