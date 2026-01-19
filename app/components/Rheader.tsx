@@ -16,6 +16,9 @@ export default function Header() {
         <li>
           <Link href="/RJ/p4">P4</Link>
         </li>
+        <li>
+          <Link href="/RJ/p5">P5</Link>
+        </li>
       </ul>
     </header>
   );
