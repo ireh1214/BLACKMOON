@@ -1,21 +1,44 @@
-import Link from "next/link"; // ✅ Link 임포트
+"use client";
+import { useState } from "react";
+import Link from "next/link";
 
 export default function Header() {
+  const [open, setOpen] = useState(false);
+
+  const closeMenu = () => setOpen(false);
+
   return (
-    <header>
-      <ul>
+    <header className={`hw ${open ? "open" : ""}`}>
+      <div className="img_wrap" onClick={() => setOpen(!open)}>
+        <img src="/img/hwmain.png" alt="menu toggle" />
+      </div>
+
+      <ul className="gnb">
         <li>
-          <Link href="/HW/p1">P1</Link>
+          · 썰풀이 ·
+          <ul className="sub">
+            <li>
+              <Link href="/HW/p1" onClick={closeMenu}>
+                p1
+              </Link>
+            </li>
+            <li>
+              <Link href="/HW/p2" onClick={closeMenu}>
+                p2
+              </Link>
+            </li>
+            <li>
+              <Link href="/HW/p3" onClick={closeMenu}>
+                p3
+              </Link>
+            </li>
+            <li>
+              <Link href="/HW/p4" onClick={closeMenu}>
+                p4
+              </Link>
+            </li>
+          </ul>
         </li>
-        <li>
-          <Link href="/HW/p2">P2</Link>
-        </li>
-        <li>
-          <Link href="/HW/p3">P3</Link>
-        </li>
-        {/* <li>
-          <Link href="/p4">P4</Link>
-        </li> */}
       </ul>
     </header>
   );

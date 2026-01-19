@@ -50,7 +50,7 @@ export default function Home() {
         <li onClick={() => router.push("/HW/p1")}>
           2025년 8월 3일로부터 <span>{daysFromAug3}일</span>
         </li>
-        <li onClick={() => router.push("/RJ/p1")}>
+        <li onClick={() => router.push("/RJ")}>
           2025년 9월 9일로부터 <span>{daysFromSep9}일</span>
         </li>
       </ul>

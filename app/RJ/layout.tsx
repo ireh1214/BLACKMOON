@@ -8,8 +8,7 @@ export default function RootLayout({
   return (
     <div className="wrap">
       <Header />
-      {/* ❌ header 없음 */}
-      {children}
+      <section className="main_section">{children}</section>
     </div>
   );
 }

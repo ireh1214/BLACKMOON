@@ -1,4 +1,4 @@
-import Header from "../../components/Zheader";
+import Header from "../components/Zheader";
 
 export default function RootLayout({
   children,
@@ -8,8 +8,7 @@ export default function RootLayout({
   return (
     <div className="wrap">
       <Header />
-      {/* ❌ header 없음 */}
-      {children}
+      <section className="main_section">{children}</section>
     </div>
   );
 }
