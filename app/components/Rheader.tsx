@@ -1,58 +1,27 @@
-"use client";
-import { useState } from "react";
-import Link from "next/link";
+import Header from "./Header";
 
-export default function Header() {
-  const [open, setOpen] = useState(false);
-
-  const closeMenu = () => setOpen(false);
-
+export default function RHeader() {
   return (
-    <header className={`rj ${open ? "open" : ""}`}>
-      <div className="img_wrap" onClick={() => setOpen(!open)}>
-        <Link href="/RJ/" onClick={closeMenu}>
-          <img src="/img/header_logo.png" alt="menu toggle" />
-        </Link>
-      </div>
-
-      <ul className="gnb">
-        <li>
-          · 썰풀이 ·
-          <ul className="sub">
-            <li>
-              <Link href="/RJ/p2" onClick={closeMenu}>
-                수도원AU
-              </Link>
-            </li>
-            <li>
-              <Link href="/RJ/p3" onClick={closeMenu}>
-                기사AU
-              </Link>
-            </li>
-          </ul>
-        </li>
-
-        <li>
-          · TRPG ·
-          <ul className="sub">
-            <li>
-              <Link href="/RJ/p1" onClick={closeMenu}>
-                창을 짚은 손
-              </Link>
-            </li>
-            <li>
-              <Link href="/RJ/p4" onClick={closeMenu}>
-                검은 괴물의 신부
-              </Link>
-            </li>
-            <li>
-              <Link href="/RJ/p5" onClick={closeMenu}>
-                화장열차
-              </Link>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </header>
+    <Header
+      variant="rj"
+      logo={{ src: "/img/header_logo.png", href: "/RJ/" }}
+      menus={[
+        {
+          title: "· 썰풀이 ·",
+          items: [
+            { label: "수도원AU", href: "/RJ/p2" },
+            { label: "기사AU", href: "/RJ/p3" },
+          ],
+        },
+        {
+          title: "TRPG",
+          items: [
+            { label: "창을 짚은 손", href: "/RJ/p1" },
+            { label: "검은 괴물의 신부", href: "/RJ/p4" },
+            { label: "화장열차", href: "/RJ/p5" },
+          ],
+        },
+      ]}
+    />
   );
 }

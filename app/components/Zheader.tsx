@@ -1,45 +1,21 @@
-"use client";
-import { useState } from "react";
-import Link from "next/link";
+import Header from "./Header";
 
-export default function Header() {
-  const [open, setOpen] = useState(false);
-
-  const closeMenu = () => setOpen(false);
-
+export default function ZHeader() {
   return (
-    <header className={`hw ${open ? "open" : ""}`}>
-      <div className="img_wrap" onClick={() => setOpen(!open)}>
-        <img src="/img/hwmain.png" alt="menu toggle" />
-      </div>
-
-      <ul className="gnb">
-        <li>
-          · 썰풀이 ·
-          <ul className="sub">
-            <li>
-              <Link href="/HW/p1" onClick={closeMenu}>
-                p1
-              </Link>
-            </li>
-            <li>
-              <Link href="/HW/p2" onClick={closeMenu}>
-                p2
-              </Link>
-            </li>
-            <li>
-              <Link href="/HW/p3" onClick={closeMenu}>
-                p3
-              </Link>
-            </li>
-            <li>
-              <Link href="/HW/p4" onClick={closeMenu}>
-                p4
-              </Link>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </header>
+    <Header
+      variant="hw"
+      logo={{ src: "/img/hwmain.png" }}
+      menus={[
+        {
+          title: "· 썰풀이 ·",
+          items: [
+            { label: "p1", href: "/HW/p1" },
+            { label: "p2", href: "/HW/p2" },
+            { label: "p3", href: "/HW/p3" },
+            { label: "p4", href: "/HW/p4" },
+          ],
+        },
+      ]}
+    />
   );
 }

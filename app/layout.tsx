@@ -19,7 +19,7 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <div className="wrap">{children}</div>
+        <div>{children}</div>
       </body>
     </html>
   );
